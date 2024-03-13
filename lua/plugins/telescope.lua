@@ -6,7 +6,7 @@ return {
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope-ui-select.nvim',
   },
-  event = 'VeryLazy',
+  event = 'VimEnter',
   keys = {
     {
       '<leader>sf',
@@ -85,6 +85,13 @@ return {
         }
       end,
       desc = '[S]earch [/] in Open Files',
+    },
+    {
+      '<leader>snc',
+      function ()
+        require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }
+      end,
+     desc = '[S]earch [N]eovim [C]onfigs',
     },
   },
   config = function()

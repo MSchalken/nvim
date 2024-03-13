@@ -16,12 +16,12 @@ require 'augroups'
 
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
-local on_attach = function(_, bufnr)
-  -- Create a command `:Format` local to the LSP buffer
-  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-    vim.lsp.buf.format()
-  end, { desc = 'Format current buffer with LSP' })
-end
+-- local on_attach = function(_, bufnr)
+--   -- Create a command `:Format` local to the LSP buffer
+--   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+--     vim.lsp.buf.format()
+--   end, { desc = 'Format current buffer with LSP' })
+-- end
 
 local servers = {
   lua_ls = {
@@ -48,7 +48,7 @@ mason_lspconfig.setup_handlers {
   function(server_name)
     require('lspconfig')[server_name].setup {
       capabilities = capabilities,
-      on_attach = on_attach,
+      -- on_attach = on_attach,
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
     }
@@ -57,12 +57,12 @@ mason_lspconfig.setup_handlers {
 
 require('lspconfig').clangd.setup {
   cmd = {
-    "clangd",
-    "--background-index",
-    "--clang-tidy",
+    'clangd',
+    '--background-index',
+    '--clang-tidy',
   },
   capabilities = capabilities,
-  on_attach = on_attach,
+  -- on_attach = on_attach,
 }
 
 vim.diagnostic.config {

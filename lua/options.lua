@@ -17,6 +17,10 @@ vim.o.completeopt = 'menuone,noselect' -- Set completeopt to have a better compl
 vim.o.termguicolors = true -- Use more colors
 vim.o.scrolloff = 8 -- Set minimum amount of lines to keep under and above cursor
 vim.o.updatetime = 250 -- Decrease update time
+vim.o.showmode = false -- Don't show mode since it is shown in status line
+vim.o.splitright = true -- Split to right instead of left
+vim.o.splitbelow = true -- Split below instead of above
+vim.o.inccommand = 'split' -- Preview substitutions live
 
 -- -- [[ Set Pwsh as the default shell for vim terms ]]
 -- local powershell_options = {
