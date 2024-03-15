@@ -21,6 +21,7 @@ vim.o.showmode = false -- Don't show mode since it is shown in status line
 vim.o.splitright = true -- Split to right instead of left
 vim.o.splitbelow = true -- Split below instead of above
 vim.o.inccommand = 'split' -- Preview substitutions live
+vim.o.gdefault = true
 
 -- -- [[ Set Pwsh as the default shell for vim terms ]]
 -- local powershell_options = {
